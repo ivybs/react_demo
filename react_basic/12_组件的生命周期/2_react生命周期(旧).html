@@ -7,6 +7,7 @@
 <body>
 	<!-- 准备好一个“容器” -->
 	<div id="test"></div>
+	<div id="demo"></div>
 	
 	<!-- 引入react核心库 -->
 	<script type="text/javascript" src="../js/react.development.js"></script>
@@ -129,6 +130,9 @@
 		//子组件B
 		class B extends React.Component{
 			//组件将要接收新的props的钩子
+			// 第一次初始化的时候 父组件的render是不会导致
+			// 子组件调用componentWillReceiveProps
+			// 只有当props更新了（不一定要是新的值，而是凡是调用了父组件的render函数）的时候才会调用
 			componentWillReceiveProps(props){
 				console.log('B---componentWillReceiveProps',props);
 			}
@@ -158,6 +162,9 @@
 		
 		//渲染组件
 		ReactDOM.render(<Count/>,document.getElementById('test'))
+		ReactDOM.render(<A/>,document.getElementById('demo'))
+
 	</script>
+
 </body>
 </html>

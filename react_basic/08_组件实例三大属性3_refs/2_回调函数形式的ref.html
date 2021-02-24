@@ -20,17 +20,26 @@
 		class Demo extends React.Component{
 			//展示左侧输入框的数据
 			showData = ()=>{
-				const {input1} = this
+				const input1 = this.input1
 				alert(input1.value)
 			}
 			//展示右侧输入框的数据
 			showData2 = ()=>{
+				// 机构化赋值 注意和上面的比较
 				const {input2} = this
 				alert(input2.value)
 			}
+			/*回调函数的三个条件
+			* 1.你定义的
+			* 2.你没有调用
+			* 3.但是最终执行了
+			* <!-- 回调函数的参数c就是当前节点input -->
+			* ref中定义的回调函数 你只管定义 不管调用 调用都是react帮你做了
+			* */
 			render(){
 				return(
 					<div>
+
 						<input ref={c => this.input1 = c } type="text" placeholder="点击按钮提示数据"/>&nbsp;
 						<button onClick={this.showData}>点我提示左侧的数据</button>&nbsp;
 						<input onBlur={this.showData2} ref={c => this.input2 = c } type="text" placeholder="失去焦点提示数据"/>&nbsp;

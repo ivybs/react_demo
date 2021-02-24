@@ -42,8 +42,10 @@
 			}
 
 			//保存表单数据到状态中
+			// 这里的saveFormData就是高阶函数
 			saveFormData = (dataType)=>{
 				return (event)=>{
+					//看复习文件夹下的5_对象相关知识
 					this.setState({[dataType]:event.target.value})
 				}
 			}

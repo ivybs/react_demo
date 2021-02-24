@@ -70,6 +70,7 @@
 			//在更新之前获取快照
 			getSnapshotBeforeUpdate(){
 				console.log('getSnapshotBeforeUpdate');
+				// 在这里的的返回值，就是一个快照值，这个快照值可以快照值参数的形式传递给componentDidUpdate方法
 				return 'atguigu'
 			}
 
@@ -90,6 +91,8 @@
 			}
 
 			//组件更新完毕的钩子
+			//注意参数中传入的是旧的prop、旧的state
+			// 这里的快照值就是getSnapshotBeforeUpdate方法返回的数据
 			componentDidUpdate(preProps,preState,snapshotValue){
 				console.log('Count---componentDidUpdate',preProps,preState,snapshotValue);
 			}

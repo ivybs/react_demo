@@ -22,6 +22,15 @@
 				(1).通过onXxx属性指定事件处理函数(注意大小写)
 						a.React使用的是自定义(合成)事件, 而不是使用的原生DOM事件 —————— 为了更好的兼容性
 						b.React中的事件是通过事件委托方式处理的(委托给组件最外层的元素) ————————为了的高效
+						例如
+						<ul>
+							<li />
+							<li />
+							<li />
+						</ul>
+						此时的事件绑定不会再逐一的绑定到li标签上
+						而是会直接将事件绑定到ul上，因为当事件发生后，由于事件冒泡，ul总会知道
+						与其繁琐的在每个li标签上绑定事件，不如在ul上绑定事件高效
 				(2).通过event.target得到发生事件的DOM元素对象 ——————————不要过度使用ref
 			 */
 			//创建ref容器
@@ -30,12 +39,17 @@
 
 			//展示左侧输入框的数据
 			showData = (event)=>{
+				// ref要尽量少用
+				// 像这种发生事情的组件和实际要获取的组件不是同一个组件时，可以使用ref
+				// 这里的event.target是事件发生的组件button
 				console.log(event.target);
 				alert(this.myRef.current.value);
 			}
 
 			//展示右侧输入框的数据
 			showData2 = (event)=>{
+				// 像这种发生事件的组件和实际要获取的组件是同一个组件的时候，使用event.target就可以了
+				// 这里的event.target是发生事件的组件input
 				alert(event.target.value);
 			}
 

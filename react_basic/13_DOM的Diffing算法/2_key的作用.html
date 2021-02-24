@@ -111,6 +111,20 @@
 					<h3>使用index（索引值）作为key</h3>
 					<ul>
 						{
+						    /*
+						    如果使用index，还会导致在添加一个新元素的时候，由于li的index是按照从上到下的顺序来定义的
+						    所以在添加后，同一个index可能指向的就不是原来的那个li元素了，会出现错位的现象
+						    */
+						    /*
+						    * 当使用index作为key时，新添加一个元素后，index为0，那么这个时候diff算法去检查，已经存在key=index=0
+						    * 的元素了，所以这个时候，再去检查元素中的内容，发现内容不一样的时候，
+						    * 就会生成新的真实dom,用新的内容来代替相同key下原来的旧内容
+						    * */
+						    /*
+						    * 当使用index作为key时，新添加一个元素会导致原来index为最下面的那个元素原本index为1，添加完成后index为2
+						    * 这个时候由于diff算法，发现原本没有index为2的li元素，就会新建虚拟dom，然后新建真实dom，所以新建虚拟dom后
+						    * 由于新建了真实dom，原本在修改前index为1的元素中的input框中的数据就不见了
+						    * */
 							this.state.persons.map((personObj,index)=>{
 								return <li key={index}>{personObj.name}---{personObj.age}<input type="text"/></li>
 							})

@@ -38,6 +38,7 @@
 					//模拟一条新闻
 					const news = '新闻'+ (newsArr.length+1)
 					//更新状态
+					// 新生成的news在已有的news位置之上
 					this.setState({newsArr:[news,...newsArr]})
 				}, 1000);
 			}

@@ -43,7 +43,13 @@
 				return(
 					<div>
 						<h2>今天天气很{isHot ? '炎热':'凉爽'}</h2>
-						{/*<input ref={(c)=>{this.input1 = c;console.log('@',c);}} type="text"/><br/><br/>*/}
+						{/*
+						* 如果ref回调函数是以内联函数的方式定义的，在更新过中它会被执行两次，第一次传入参数null,
+						然后第二次会传入参数DOM元素。这是因为在每次渲染时会创建一个新的函数实例，
+						所以React清空旧的ref内联函数中的参数并且设置新的。
+						通过将ref的回调函数定义成class的绑定函数的方式可以避免上述问题，
+						但是大多数情况下它是无关紧要的。
+						<input ref={(c)=>{this.input1 = c;console.log('@',c);}} type="text"/><br/><br/>*/}
 						<input ref={this.saveInput} type="text"/><br/><br/>
 						<button onClick={this.showInfo}>点我提示输入的数据</button>
 						<button onClick={this.changeWeather}>点我切换天气</button>
