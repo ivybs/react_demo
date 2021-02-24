@@ -59,6 +59,25 @@
 			render(){
 				return(
 					<form onSubmit={this.handleSubmit}>
+						{/*
+							这里不论username\password怎么变 input框中始终还是 username password这两个字符串
+							陷入误区：
+								onChange={this.saveFormData('username')的意思是：
+								是将saveFormData方法的返回值作为onChange作为回调
+								不是将saveFormData交给onChange作为回调
+								 	而this.saveFormData('username')的返回值为undefined，不会帮你调用undefined
+								onChange={this.saveFormData}
+									而这句话的意思是 将saveFormData作为onChange的回调方法
+
+								但是！ 我们又想向方法中传入参数！
+								这个时候就要改写saveFormData，使得saveFormData方法返回一个方法，这样就既可以返回方法又可以获得参数了。
+								saveFormData = (dataType)=>{
+									return (event)=>{
+										//看复习文件夹下的5_对象相关知识
+										this.setState({[dataType]:event.target.value})
+									}
+								}
+						*/}
 						用户名：<input onChange={this.saveFormData('username')} type="text" name="username"/>
 						密码：<input onChange={this.saveFormData('password')} type="password" name="password"/>
 						<button>登录</button>

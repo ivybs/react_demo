@@ -1,3 +1,4 @@
 # https://www.robotstxt.org/robotstxt.html
+# 爬虫规则文件，在这里规定了什么可以爬，什么不可以爬
 User-agent: *
 Disallow:
