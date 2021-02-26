@@ -40,6 +40,7 @@
 				//读取状态
 				const {isHot,wind} = this.state
 				// 这里的this.changeWeather只是一个引用
+				console.log(this.changeWeather)
 				return <h1 onClick={this.changeWeather}>今天天气很{isHot ? '炎热' : '凉爽'}，{wind}</h1>
 			}
 

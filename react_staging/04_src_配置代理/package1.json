@@ -45,5 +45,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  /*配置代理*/
+  "proxy":"http://localhost:5000"
+
 }

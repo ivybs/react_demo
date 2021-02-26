@@ -17,7 +17,10 @@
 					return preValue + currentValue
 				})
 			}
-			console.log(sum(1,2,3,4));
+			sum.prototype.name=1
+			const s = new sum(arr1)
+			console.log(s.name)
+			console.log(s)
 
 			//构造字面量对象时使用展开语法
 			let person = {name:'tom',age:18}
