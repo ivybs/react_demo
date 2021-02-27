@@ -34,6 +34,10 @@ export default class App extends Component {
 								<Switch>
 									<Route path="/about" component={About}/>
 									<Route path="/home" component={Home}/>
+									{/** 
+									 * redirect标签相当于 上面的都没有匹配上的话，那么就走redirect指向的地方
+									 * 相当于是一个兜底的
+									*/}
 									<Redirect to="/about"/>
 								</Switch>
 							</div>
