@@ -22,6 +22,14 @@ export default class App extends Component {
 							<a className="list-group-item active" href="./home.html">Home</a> */}
 
 							{/* 在React中靠路由链接实现切换组件--编写路由链接 */}
+							{/*
+							// navlink主要是起到了一个点击高亮 即在className中添加了active字段
+								正好bootstrap又实现了对类名中又active字段的dom高亮的样式
+
+								如果不是使用bootstrap，那么就可以通过使用activeClassName字段，来定义
+								点击后className中添加的字段 如activeClassName=“atguigu"
+								这个时候点击后 className="list-group-item atguigu"
+							*/}
 							<NavLink activeClassName="atguigu" className="list-group-item" to="/about">About</NavLink>
 							<NavLink activeClassName="atguigu" className="list-group-item" to="/home">Home</NavLink>
 						</div>

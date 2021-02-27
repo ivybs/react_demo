@@ -71,6 +71,10 @@
 				2.Switch可以提高路由匹配效率(单一匹配)。
 
 ## 七、解决多级路径刷新页面样式丢失的问题
+				路由是多级的结构，而且要刷新，刷新后就会导致样式的丢失
+				脚手架中的dev-server帮我们起了一个localhost:3000这样的服务，
+				其中localhost:3000 就相当于当前项目的public目录
+				并且当用户请求了一个没有的资源的时候，会将public目录下的index.html资源返回给用户
 				1.public/index.html 中 引入样式时不写 ./ 写 / （常用）
 				2.public/index.html 中 引入样式时不写 ./ 写 %PUBLIC_URL% （常用）
 				3.使用HashRouter

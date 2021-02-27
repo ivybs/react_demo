@@ -32,6 +32,13 @@ export default class App extends Component {
 						<div className="panel">
 							<div className="panel-body">
 								{/* 注册路由 */}
+								{/** 在没有使用switch组件的时候：
+								 * 		已经匹配到了/home并拿到home组件之后，他还会继续向下匹配
+								 * 	 在使用了switch组件的时候：
+								 * 		已经匹配到/home并拿到home组件之后，他就不会再继续向下匹配了
+								 * 	注意：继续向下匹配存在效率问题，如两个相同的path的路由中间隔了无数个其他路由
+								 * 			此时的继续向下匹配会很花时间
+								 *  */}
 								<Switch>
 									<Route path="/about" component={About}/>
 									<Route path="/home" component={Home}/>

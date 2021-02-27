@@ -22,7 +22,22 @@ export default class App extends Component {
 							{/* <a className="list-group-item" href="./about.html">About</a>
 							<a className="list-group-item active" href="./home.html">Home</a> */}
 
-							{/* 在React中靠路由链接实现切换组件--编写路由链接 */}
+							{/* 在React中靠路由链接实现切换组件--编写路由链接
+							路由是多级的结构，而且要刷新，刷新后就会导致样式的丢失
+
+							脚手架中的dev-server帮我们起了一个localhost:3000这样的服务，
+							其中localhost:3000 就相当于当前项目的public目录
+							并且当用户请求了一个没有的资源的时候，会将public目录下的index.html资源返回给用户
+
+							没加/atguigui：
+								http://localhost: 3000/css/bootstrap.css
+								
+
+							加了/atguigui
+								http://localhost: 3000/atguigu/css/bootstrap.css
+								由于public下根本没有这个路径下的资源，所以会返回用户index.html文件
+
+							*/}
 							<MyNavLink to="/atguigu/about">About</MyNavLink>
 							<MyNavLink to="/atguigu/home">Home</MyNavLink>
 						</div>

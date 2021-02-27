@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import {Link,Route} from 'react-router-dom'
-import Home from './components/Home'
-import About from './components/About'
+import Home from './pages/Home'
+import About from './pages/About'
 
 export default class App extends Component {
 	render() {
@@ -20,7 +20,9 @@ export default class App extends Component {
 							{/* <a className="list-group-item" href="./about.html">About</a>
 							<a className="list-group-item active" href="./home.html">Home</a> */}
 
-							{/* 在React中靠路由链接实现切换组件--编写路由链接 */}
+							{/* 在React中靠路由链接实现切换组件--编写路由链接
+								a标签怎么写link就怎么写
+							*/}
 							<Link className="list-group-item" to="/about">About</Link>
 							<Link className="list-group-item" to="/home">Home</Link>
 						</div>
