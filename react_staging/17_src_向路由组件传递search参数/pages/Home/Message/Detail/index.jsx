@@ -15,6 +15,7 @@ export default class Detail extends Component {
 
 		// 接收search参数
 		const {search} = this.props.location
+		// qs库是专门用于将qs的字符串转换成我们所需要的各个属性的
 		const {id,title} = qs.parse(search.slice(1))
 
 		const findResult = DetailData.find((detailObj)=>{

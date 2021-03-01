@@ -18,6 +18,8 @@ export default class Detail extends Component {
 		// const {id,title} = qs.parse(search.slice(1))
 
 		// 接收state参数
+		// 这里的 || {} 的意思是，如果this.props.location.state是undefined
+		// 那么就返回{}  {}的意思是一个空对象
 		const {id,title} = this.props.location.state || {}
 
 		const findResult = DetailData.find((detailObj)=>{

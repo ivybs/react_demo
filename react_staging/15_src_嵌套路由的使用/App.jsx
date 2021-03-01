@@ -34,6 +34,7 @@ export default class App extends Component {
 								<Switch>
 									<Route path="/about" component={About}/>
 									<Route path="/home" component={Home}/>
+									{/**除了起到兜底的作用 还可以是首次渲染home组件中，默认选中的标签*/}
 									<Redirect to="/about"/>
 								</Switch>
 							</div>
