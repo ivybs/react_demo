@@ -125,8 +125,9 @@
 
 ## 十三、BrowserRouter与HashRouter的区别
 			1.底层原理不一样：
-						BrowserRouter使用的是H5的history API，不兼容IE9及以下版本。
+						BrowserRouter使用的是H5的history API，不兼容IE9及以下版本。this.props.history里面的这个history是对h5下history API的封装。
 						HashRouter使用的是URL的哈希值。
+
 			2.path表现形式不一样
 						BrowserRouter的路径中没有#,例如：localhost:3000/demo/test
 						HashRouter的路径包含#,例如：localhost:3000/#/demo/test
