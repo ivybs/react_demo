@@ -4,6 +4,7 @@
 */
 
 const initState = 0 //初始化状态
+//如果这里的preState是undefined，那么就让initState作为preState的默认值
 export default function countReducer(preState=initState,action){
 	// console.log(preState);
 	//从action对象中获取：type、data

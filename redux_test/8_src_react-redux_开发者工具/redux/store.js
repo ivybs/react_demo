@@ -10,7 +10,7 @@ import countReducer from './reducers/count'
 import personReducer from './reducers/person'
 //引入redux-thunk，用于支持异步action
 import thunk from 'redux-thunk'
-//引入redux-devtools-extension
+//引入redux-devtools-extension 用于配合浏览器的插件，更加方便的看redux里面的东西
 import {composeWithDevTools} from 'redux-devtools-extension'
 
 //汇总所有的reducer变为一个总的reducer

@@ -8,7 +8,7 @@ import {
 } from '../../redux/count_action'
 
 //引入connect用于连接UI组件与redux
-import {connect} from 'react-redux'
+import {connect} from 'react-redux' 
 
 /* 
 	1.mapStateToProps函数返回的是一个对象；

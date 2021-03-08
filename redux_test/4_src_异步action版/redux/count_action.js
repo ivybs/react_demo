@@ -8,6 +8,9 @@ export const createIncrementAction = data => ({type:INCREMENT,data})
 export const createDecrementAction = data => ({type:DECREMENT,data})
 
 //异步action，就是指action的值为函数,异步action中一般都会调用同步action，异步action不是必须要用的。
+// 异步action就是一个函数
+// 要求action创建出来的（返回出来的）一定要是一个普通的action对象（有type和data属性的）
+// 需要安装redux-thunk 需要在store.js中引入
 export const createIncrementAsyncAction = (data,time) => {
 	return (dispatch)=>{
 		setTimeout(()=>{

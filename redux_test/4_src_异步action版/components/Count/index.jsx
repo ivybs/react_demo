@@ -41,7 +41,7 @@ export default class Count extends Component {
 	incrementAsync = ()=>{
 		const {value} = this.selectNumber
 		// setTimeout(()=>{
-			store.dispatch(createIncrementAsyncAction(value*1,500))
+		store.dispatch(createIncrementAsyncAction(value*1,500))
 		// },500)
 	}
 
