@@ -5,7 +5,8 @@
 ```
 	(1). setState(stateChange, [callback])------对象式的setState
             1.stateChange为状态改变对象(该对象可以体现出状态的更改)
-            2.callback是可选的回调函数, 它在状态更新完毕、界面也更新后(render调用后)才被调用
+            2.callback是可选的回调函数, 它在状态更新完毕、界面也更新后(render调用后)才被调用,
+				这个时候拿到的就是state里面最新的值了
 					
 	(2). setState(updater, [callback])------函数式的setState
             1.updater为返回stateChange对象的函数。

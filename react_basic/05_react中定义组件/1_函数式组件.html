@@ -16,6 +16,7 @@
 	<script type="text/javascript" src="../js/babel.min.js"></script>
 
 	<script type="text/babel">
+		// 函数式组件this缺失
 		//1.创建函数式组件 函数式组件函数名就是组件名
 		function MyComponent(){
 			console.log(this); //此处的this是undefined，因为babel编译后开启了严格模式

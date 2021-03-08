@@ -1,6 +1,8 @@
 import React, { PureComponent } from 'react'
 import './index.css'
 
+// 如果使用pureComponent的话，那么就可以不用自己写阀门那里的代码了shouldComponentUpdate
+// 自己写阀门如果参数太多了话，就会有很多代码
 export default class Parent extends PureComponent {
 
 	state = {carName:"奔驰c36",stus:['小张','小李','小王']}
@@ -17,9 +19,12 @@ export default class Parent extends PureComponent {
 	changeCar = ()=>{
 		//this.setState({carName:'迈巴赫'})
 
+		// 引用对象的地址
 		const obj = this.state
 		obj.carName = '迈巴赫'
 		console.log(obj === this.state);
+		// PureComponent的底层也是使用的浅对比，
+		// 对比的是两个变量的地址值，如果地址值不变就不会重新渲染
 		this.setState(obj)
 	}
 

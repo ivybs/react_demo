@@ -45,18 +45,26 @@ import ReactDOM from 'react-dom'
 
 function Demo(){
 	//console.log('Demo');
-
+	// 这里的0表示的是count的初始值为0
 	const [count,setCount] = React.useState(0)
 	const myRef = React.useRef()
 
-	React.useEffect(()=>{
+	// 所以可以看出来useEffect这个函数包含了react中常用的三个生命周期函数
+	React.useEffect(
+		// 这个大函数相当于didmount和didupdate
+		()=>{
+
 		let timer = setInterval(()=>{
 			setCount(count => count+1 )
 		},1000)
+		// 这个函数的返回的函数，相当于willunmount
 		return ()=>{
 			clearInterval(timer)
 		}
-	},[])
+	},[])// 如果不加后面的这个数组，这个函数的意思是，只要state发生了变化就会调用一次本函数
+	// 也就是说，不加第二个参数，监测的就是所有人
+	// 但是如果后面加了一个空数组，那么就是谁也不监测
+	// 如果第二个参数是[count],那么他的意思就是需要监测count
 
 	//加的回调
 	function add(){
